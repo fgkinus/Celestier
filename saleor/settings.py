@@ -51,9 +51,8 @@ CACHES = {'default': django_cache_url.config()}
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
+        default='postgres://postgres:babbage@localhost:5432/saleor',
         conn_max_age=600)}
-
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en'
@@ -162,7 +161,7 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'zxm,x,mxmz,mkcm.,m,.mz.,zmx,.xzm.,m,.m,.xm,.mxz.m.'  # os.environ.get('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -427,7 +426,6 @@ WEBPACK_LOADER = {
             r'.+\.hot-update\.js',
             r'.+\.map']}}
 
-
 LOGOUT_ON_PASSWORD_CHANGE = False
 
 # SEARCH CONFIGURATION
@@ -491,7 +489,6 @@ IMPERSONATE = {
     'USE_HTTP_REFERER': True,
     'CUSTOM_ALLOW': 'saleor.account.impersonate.can_impersonate'}
 
-
 # Rich-text editor
 ALLOWED_TAGS = [
     'a',
@@ -514,7 +511,6 @@ ALLOWED_ATTRIBUTES = {
     'img': ['src']}
 ALLOWED_STYLES = ['text-align']
 
-
 # Slugs for menus precreated in Django migrations
 DEFAULT_MENUS = {
     'top_menu_name': 'navbar',
@@ -529,7 +525,6 @@ NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
 
-
 #  Sentry
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
@@ -538,10 +533,8 @@ if SENTRY_DSN:
         'dsn': SENTRY_DSN,
         'release': __version__}
 
-
 SERIALIZATION_MODULES = {
     'json': 'saleor.core.utils.json_serializer'}
-
 
 DUMMY = 'dummy'
 BRAINTREE = 'braintree'
@@ -563,3 +556,7 @@ PAYMENT_GATEWAYS = {
         }
     }
 }
+
+
+
+
